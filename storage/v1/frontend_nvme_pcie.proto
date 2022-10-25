@@ -175,7 +175,7 @@ message NVMeNamespaceCreateRequest {
 }
 
 message NVMeNamespaceCreateResponse {
-    // Intentionally empty.
+    int64 namespace_id = 1;
 }
 
 message NVMeNamespaceDeleteRequest {

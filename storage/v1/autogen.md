@@ -1134,7 +1134,12 @@ Intentionally empty.
 <a name="opi_api-storage-v1-NVMeNamespaceCreateResponse"></a>
 
 ### NVMeNamespaceCreateResponse
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| namespace_id | [int64](#int64) |  |  |
 
 
 

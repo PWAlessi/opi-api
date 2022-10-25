@@ -4660,9 +4660,10 @@ class NVMeNamespaceCreateRequest final :
 // -------------------------------------------------------------------
 
 class NVMeNamespaceCreateResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.NVMeNamespaceCreateResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.NVMeNamespaceCreateResponse) */ {
  public:
   inline NVMeNamespaceCreateResponse() : NVMeNamespaceCreateResponse(nullptr) {}
+  ~NVMeNamespaceCreateResponse() override;
   explicit constexpr NVMeNamespaceCreateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   NVMeNamespaceCreateResponse(const NVMeNamespaceCreateResponse& from);
@@ -4735,15 +4736,27 @@ class NVMeNamespaceCreateResponse final :
   NVMeNamespaceCreateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<NVMeNamespaceCreateResponse>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const NVMeNamespaceCreateResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const NVMeNamespaceCreateResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const NVMeNamespaceCreateResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const NVMeNamespaceCreateResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NVMeNamespaceCreateResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -4754,6 +4767,8 @@ class NVMeNamespaceCreateResponse final :
   explicit NVMeNamespaceCreateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -4765,6 +4780,18 @@ class NVMeNamespaceCreateResponse final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kNamespaceIdFieldNumber = 1,
+  };
+  // int64 namespace_id = 1;
+  void clear_namespace_id();
+  int64_t namespace_id() const;
+  void set_namespace_id(int64_t value);
+  private:
+  int64_t _internal_namespace_id() const;
+  void _internal_set_namespace_id(int64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceCreateResponse)
  private:
   class _Internal;
@@ -4772,6 +4799,7 @@ class NVMeNamespaceCreateResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  int64_t namespace_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -8636,6 +8664,26 @@ inline void NVMeNamespaceCreateRequest::set_allocated_namespace_(::opi_api::stor
 // -------------------------------------------------------------------
 
 // NVMeNamespaceCreateResponse
+
+// int64 namespace_id = 1;
+inline void NVMeNamespaceCreateResponse::clear_namespace_id() {
+  namespace_id_ = int64_t{0};
+}
+inline int64_t NVMeNamespaceCreateResponse::_internal_namespace_id() const {
+  return namespace_id_;
+}
+inline int64_t NVMeNamespaceCreateResponse::namespace_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_id)
+  return _internal_namespace_id();
+}
+inline void NVMeNamespaceCreateResponse::_internal_set_namespace_id(int64_t value) {
+  
+  namespace_id_ = value;
+}
+inline void NVMeNamespaceCreateResponse::set_namespace_id(int64_t value) {
+  _internal_set_namespace_id(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_id)
+}
 
 // -------------------------------------------------------------------
 
