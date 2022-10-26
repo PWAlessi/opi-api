@@ -958,7 +958,7 @@ virtual functions under the physical function.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -984,7 +984,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -1015,7 +1015,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 
 
 
@@ -1045,7 +1045,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -1159,7 +1159,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 | namespace_id | [int64](#int64) |  |  |
 
@@ -1186,7 +1186,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 | namespace_id | [int64](#int64) |  |  |
 
@@ -1218,7 +1218,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -1249,7 +1249,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_nqn | [int64](#int64) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 | namespace_id | [int64](#int64) |  |  |
 

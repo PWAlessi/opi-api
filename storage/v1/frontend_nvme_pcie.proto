@@ -127,7 +127,7 @@ message NVMeControllerCreateResponse {
 }
 
 message NVMeControllerDeleteRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -144,7 +144,7 @@ message NVMeControllerUpdateResponse {
 }
 
 message NVMeControllerListRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
 }
 
 message NVMeControllerListResponse {
@@ -152,7 +152,7 @@ message NVMeControllerListResponse {
 }
 
 message NVMeControllerGetRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -161,7 +161,7 @@ message NVMeControllerGetResponse {
 }
 
 message NVMeControllerStatsRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -179,7 +179,7 @@ message NVMeNamespaceCreateResponse {
 }
 
 message NVMeNamespaceDeleteRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
     int64 controller_id = 2;
     int64 namespace_id = 3;
 }
@@ -197,7 +197,7 @@ message NVMeNamespaceUpdateResponse {
 }
 
 message NVMeNamespaceListRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -206,7 +206,7 @@ message NVMeNamespaceListResponse {
 }
 
 message NVMeNamespaceGetRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
     int64 controller_id = 2;
     int64 namespace_id = 3;
 }
@@ -216,7 +216,7 @@ message NVMeNamespaceGetResponse {
 }
 
 message NVMeNamespaceStatsRequest {
-    int64 subsystem_nqn = 1;
+    string subsystem_nqn = 1;
     int64 controller_id = 2;
     int64 namespace_id = 3;
 }
