@@ -4809,15 +4809,15 @@ class NVMeNamespaceCreateResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNamespaceIdFieldNumber = 1,
+    kNamespaceNqnFieldNumber = 1,
   };
-  // int64 namespace_id = 1;
-  void clear_namespace_id();
-  int64_t namespace_id() const;
-  void set_namespace_id(int64_t value);
+  // int64 namespace_nqn = 1;
+  void clear_namespace_nqn();
+  int64_t namespace_nqn() const;
+  void set_namespace_nqn(int64_t value);
   private:
-  int64_t _internal_namespace_id() const;
-  void _internal_set_namespace_id(int64_t value);
+  int64_t _internal_namespace_nqn() const;
+  void _internal_set_namespace_nqn(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceCreateResponse)
@@ -4827,7 +4827,7 @@ class NVMeNamespaceCreateResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t namespace_id_;
+  int64_t namespace_nqn_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -4957,7 +4957,7 @@ class NVMeNamespaceDeleteRequest final :
   enum : int {
     kSubsystemIdFieldNumber = 1,
     kControllerIdFieldNumber = 2,
-    kNamespaceIdFieldNumber = 3,
+    kNamespaceNqnFieldNumber = 3,
   };
   // int64 subsystem_id = 1;
   void clear_subsystem_id();
@@ -4977,13 +4977,13 @@ class NVMeNamespaceDeleteRequest final :
   void _internal_set_controller_id(int64_t value);
   public:
 
-  // int64 namespace_id = 3;
-  void clear_namespace_id();
-  int64_t namespace_id() const;
-  void set_namespace_id(int64_t value);
+  // int64 namespace_nqn = 3;
+  void clear_namespace_nqn();
+  int64_t namespace_nqn() const;
+  void set_namespace_nqn(int64_t value);
   private:
-  int64_t _internal_namespace_id() const;
-  void _internal_set_namespace_id(int64_t value);
+  int64_t _internal_namespace_nqn() const;
+  void _internal_set_namespace_nqn(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceDeleteRequest)
@@ -4995,7 +4995,7 @@ class NVMeNamespaceDeleteRequest final :
   typedef void DestructorSkippable_;
   int64_t subsystem_id_;
   int64_t controller_id_;
-  int64_t namespace_id_;
+  int64_t namespace_nqn_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -5828,7 +5828,7 @@ class NVMeNamespaceGetRequest final :
   enum : int {
     kSubsystemIdFieldNumber = 1,
     kControllerIdFieldNumber = 2,
-    kNamespaceIdFieldNumber = 3,
+    kNamespaceNqnFieldNumber = 3,
   };
   // int64 subsystem_id = 1;
   void clear_subsystem_id();
@@ -5848,13 +5848,13 @@ class NVMeNamespaceGetRequest final :
   void _internal_set_controller_id(int64_t value);
   public:
 
-  // int64 namespace_id = 3;
-  void clear_namespace_id();
-  int64_t namespace_id() const;
-  void set_namespace_id(int64_t value);
+  // int64 namespace_nqn = 3;
+  void clear_namespace_nqn();
+  int64_t namespace_nqn() const;
+  void set_namespace_nqn(int64_t value);
   private:
-  int64_t _internal_namespace_id() const;
-  void _internal_set_namespace_id(int64_t value);
+  int64_t _internal_namespace_nqn() const;
+  void _internal_set_namespace_nqn(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceGetRequest)
@@ -5866,7 +5866,7 @@ class NVMeNamespaceGetRequest final :
   typedef void DestructorSkippable_;
   int64_t subsystem_id_;
   int64_t controller_id_;
-  int64_t namespace_id_;
+  int64_t namespace_nqn_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -6151,7 +6151,7 @@ class NVMeNamespaceStatsRequest final :
   enum : int {
     kSubsystemIdFieldNumber = 1,
     kControllerIdFieldNumber = 2,
-    kNamespaceIdFieldNumber = 3,
+    kNamespaceNqnFieldNumber = 3,
   };
   // int64 subsystem_id = 1;
   void clear_subsystem_id();
@@ -6171,13 +6171,13 @@ class NVMeNamespaceStatsRequest final :
   void _internal_set_controller_id(int64_t value);
   public:
 
-  // int64 namespace_id = 3;
-  void clear_namespace_id();
-  int64_t namespace_id() const;
-  void set_namespace_id(int64_t value);
+  // int64 namespace_nqn = 3;
+  void clear_namespace_nqn();
+  int64_t namespace_nqn() const;
+  void set_namespace_nqn(int64_t value);
   private:
-  int64_t _internal_namespace_id() const;
-  void _internal_set_namespace_id(int64_t value);
+  int64_t _internal_namespace_nqn() const;
+  void _internal_set_namespace_nqn(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceStatsRequest)
@@ -6189,7 +6189,7 @@ class NVMeNamespaceStatsRequest final :
   typedef void DestructorSkippable_;
   int64_t subsystem_id_;
   int64_t controller_id_;
-  int64_t namespace_id_;
+  int64_t namespace_nqn_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -8713,24 +8713,24 @@ inline void NVMeNamespaceCreateRequest::set_allocated_namespace_(::opi_api::stor
 
 // NVMeNamespaceCreateResponse
 
-// int64 namespace_id = 1;
-inline void NVMeNamespaceCreateResponse::clear_namespace_id() {
-  namespace_id_ = int64_t{0};
+// int64 namespace_nqn = 1;
+inline void NVMeNamespaceCreateResponse::clear_namespace_nqn() {
+  namespace_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceCreateResponse::_internal_namespace_id() const {
-  return namespace_id_;
+inline int64_t NVMeNamespaceCreateResponse::_internal_namespace_nqn() const {
+  return namespace_nqn_;
 }
-inline int64_t NVMeNamespaceCreateResponse::namespace_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_id)
-  return _internal_namespace_id();
+inline int64_t NVMeNamespaceCreateResponse::namespace_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_nqn)
+  return _internal_namespace_nqn();
 }
-inline void NVMeNamespaceCreateResponse::_internal_set_namespace_id(int64_t value) {
+inline void NVMeNamespaceCreateResponse::_internal_set_namespace_nqn(int64_t value) {
   
-  namespace_id_ = value;
+  namespace_nqn_ = value;
 }
-inline void NVMeNamespaceCreateResponse::set_namespace_id(int64_t value) {
-  _internal_set_namespace_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_id)
+inline void NVMeNamespaceCreateResponse::set_namespace_nqn(int64_t value) {
+  _internal_set_namespace_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_nqn)
 }
 
 // -------------------------------------------------------------------
@@ -8777,24 +8777,24 @@ inline void NVMeNamespaceDeleteRequest::set_controller_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.controller_id)
 }
 
-// int64 namespace_id = 3;
-inline void NVMeNamespaceDeleteRequest::clear_namespace_id() {
-  namespace_id_ = int64_t{0};
+// int64 namespace_nqn = 3;
+inline void NVMeNamespaceDeleteRequest::clear_namespace_nqn() {
+  namespace_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceDeleteRequest::_internal_namespace_id() const {
-  return namespace_id_;
+inline int64_t NVMeNamespaceDeleteRequest::_internal_namespace_nqn() const {
+  return namespace_nqn_;
 }
-inline int64_t NVMeNamespaceDeleteRequest::namespace_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_id)
-  return _internal_namespace_id();
+inline int64_t NVMeNamespaceDeleteRequest::namespace_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_nqn)
+  return _internal_namespace_nqn();
 }
-inline void NVMeNamespaceDeleteRequest::_internal_set_namespace_id(int64_t value) {
+inline void NVMeNamespaceDeleteRequest::_internal_set_namespace_nqn(int64_t value) {
   
-  namespace_id_ = value;
+  namespace_nqn_ = value;
 }
-inline void NVMeNamespaceDeleteRequest::set_namespace_id(int64_t value) {
-  _internal_set_namespace_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_id)
+inline void NVMeNamespaceDeleteRequest::set_namespace_nqn(int64_t value) {
+  _internal_set_namespace_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_nqn)
 }
 
 // -------------------------------------------------------------------
@@ -9031,24 +9031,24 @@ inline void NVMeNamespaceGetRequest::set_controller_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.controller_id)
 }
 
-// int64 namespace_id = 3;
-inline void NVMeNamespaceGetRequest::clear_namespace_id() {
-  namespace_id_ = int64_t{0};
+// int64 namespace_nqn = 3;
+inline void NVMeNamespaceGetRequest::clear_namespace_nqn() {
+  namespace_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceGetRequest::_internal_namespace_id() const {
-  return namespace_id_;
+inline int64_t NVMeNamespaceGetRequest::_internal_namespace_nqn() const {
+  return namespace_nqn_;
 }
-inline int64_t NVMeNamespaceGetRequest::namespace_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_id)
-  return _internal_namespace_id();
+inline int64_t NVMeNamespaceGetRequest::namespace_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_nqn)
+  return _internal_namespace_nqn();
 }
-inline void NVMeNamespaceGetRequest::_internal_set_namespace_id(int64_t value) {
+inline void NVMeNamespaceGetRequest::_internal_set_namespace_nqn(int64_t value) {
   
-  namespace_id_ = value;
+  namespace_nqn_ = value;
 }
-inline void NVMeNamespaceGetRequest::set_namespace_id(int64_t value) {
-  _internal_set_namespace_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_id)
+inline void NVMeNamespaceGetRequest::set_namespace_nqn(int64_t value) {
+  _internal_set_namespace_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_nqn)
 }
 
 // -------------------------------------------------------------------
@@ -9189,24 +9189,24 @@ inline void NVMeNamespaceStatsRequest::set_controller_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.controller_id)
 }
 
-// int64 namespace_id = 3;
-inline void NVMeNamespaceStatsRequest::clear_namespace_id() {
-  namespace_id_ = int64_t{0};
+// int64 namespace_nqn = 3;
+inline void NVMeNamespaceStatsRequest::clear_namespace_nqn() {
+  namespace_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceStatsRequest::_internal_namespace_id() const {
-  return namespace_id_;
+inline int64_t NVMeNamespaceStatsRequest::_internal_namespace_nqn() const {
+  return namespace_nqn_;
 }
-inline int64_t NVMeNamespaceStatsRequest::namespace_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_id)
-  return _internal_namespace_id();
+inline int64_t NVMeNamespaceStatsRequest::namespace_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_nqn)
+  return _internal_namespace_nqn();
 }
-inline void NVMeNamespaceStatsRequest::_internal_set_namespace_id(int64_t value) {
+inline void NVMeNamespaceStatsRequest::_internal_set_namespace_nqn(int64_t value) {
   
-  namespace_id_ = value;
+  namespace_nqn_ = value;
 }
-inline void NVMeNamespaceStatsRequest::set_namespace_id(int64_t value) {
-  _internal_set_namespace_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_id)
+inline void NVMeNamespaceStatsRequest::set_namespace_nqn(int64_t value) {
+  _internal_set_namespace_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_nqn)
 }
 
 // -------------------------------------------------------------------

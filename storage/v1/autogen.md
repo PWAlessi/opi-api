@@ -1144,7 +1144,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace_id | [int64](#int64) |  |  |
+| namespace_nqn | [int64](#int64) |  |  |
 
 
 
@@ -1161,7 +1161,7 @@ Intentionally empty.
 | ----- | ---- | ----- | ----------- |
 | subsystem_id | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
-| namespace_id | [int64](#int64) |  |  |
+| namespace_nqn | [int64](#int64) |  |  |
 
 
 
@@ -1188,7 +1188,7 @@ Intentionally empty.
 | ----- | ---- | ----- | ----------- |
 | subsystem_id | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
-| namespace_id | [int64](#int64) |  |  |
+| namespace_nqn | [int64](#int64) |  |  |
 
 
 
@@ -1251,7 +1251,7 @@ Intentionally empty.
 | ----- | ---- | ----- | ----------- |
 | subsystem_id | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
-| namespace_id | [int64](#int64) |  |  |
+| namespace_nqn | [int64](#int64) |  |  |
 
 
 

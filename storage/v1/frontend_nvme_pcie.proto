@@ -175,13 +175,13 @@ message NVMeNamespaceCreateRequest {
 }
 
 message NVMeNamespaceCreateResponse {
-    int64 namespace_id = 1;
+    int64 namespace_nqn = 1;
 }
 
 message NVMeNamespaceDeleteRequest {
     int64 subsystem_id = 1;
     int64 controller_id = 2;
-    int64 namespace_id = 3;
+    int64 namespace_nqn = 3;
 }
 
 message NVMeNamespaceDeleteResponse {
@@ -208,7 +208,7 @@ message NVMeNamespaceListResponse {
 message NVMeNamespaceGetRequest {
     int64 subsystem_id = 1;
     int64 controller_id = 2;
-    int64 namespace_id = 3;
+    int64 namespace_nqn = 3;
 }
 
 message NVMeNamespaceGetResponse {
@@ -218,7 +218,7 @@ message NVMeNamespaceGetResponse {
 message NVMeNamespaceStatsRequest {
     int64 subsystem_id = 1;
     int64 controller_id = 2;
-    int64 namespace_id = 3;
+    int64 namespace_nqn = 3;
 }
 
 message NVMeNamespaceStatsResponse {
