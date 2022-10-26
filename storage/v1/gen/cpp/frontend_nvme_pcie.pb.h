@@ -543,7 +543,7 @@ class NVMeController final :
 
   enum : int {
     kNameFieldNumber = 2,
-    kSubsystemIdFieldNumber = 3,
+    kSubsystemNqnFieldNumber = 3,
     kPcieIdFieldNumber = 4,
     kIdFieldNumber = 1,
     kMaxIoQpsFieldNumber = 5,
@@ -563,18 +563,18 @@ class NVMeController final :
   std::string* _internal_mutable_name();
   public:
 
-  // string subsystem_id = 3;
-  void clear_subsystem_id();
-  const std::string& subsystem_id() const;
+  // string subsystem_nqn = 3;
+  void clear_subsystem_nqn();
+  const std::string& subsystem_nqn() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_subsystem_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_subsystem_id();
-  PROTOBUF_NODISCARD std::string* release_subsystem_id();
-  void set_allocated_subsystem_id(std::string* subsystem_id);
+  void set_subsystem_nqn(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_subsystem_nqn();
+  PROTOBUF_NODISCARD std::string* release_subsystem_nqn();
+  void set_allocated_subsystem_nqn(std::string* subsystem_nqn);
   private:
-  const std::string& _internal_subsystem_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subsystem_id(const std::string& value);
-  std::string* _internal_mutable_subsystem_id();
+  const std::string& _internal_subsystem_nqn() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subsystem_nqn(const std::string& value);
+  std::string* _internal_mutable_subsystem_nqn();
   public:
 
   // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
@@ -630,7 +630,7 @@ class NVMeController final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subsystem_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subsystem_nqn_;
   ::opi_api::storage::v1::NvmeControllerPciId* pcie_id_;
   int64_t id_;
   int64_t max_io_qps_;
@@ -763,7 +763,7 @@ class NVMeNamespace final :
 
   enum : int {
     kNameFieldNumber = 2,
-    kSubsystemIdFieldNumber = 3,
+    kSubsystemNqnFieldNumber = 3,
     kBdevFieldNumber = 6,
     kNguidFieldNumber = 9,
     kEui64FieldNumber = 10,
@@ -790,18 +790,18 @@ class NVMeNamespace final :
   std::string* _internal_mutable_name();
   public:
 
-  // string subsystem_id = 3;
-  void clear_subsystem_id();
-  const std::string& subsystem_id() const;
+  // string subsystem_nqn = 3;
+  void clear_subsystem_nqn();
+  const std::string& subsystem_nqn() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_subsystem_id(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_subsystem_id();
-  PROTOBUF_NODISCARD std::string* release_subsystem_id();
-  void set_allocated_subsystem_id(std::string* subsystem_id);
+  void set_subsystem_nqn(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_subsystem_nqn();
+  PROTOBUF_NODISCARD std::string* release_subsystem_nqn();
+  void set_allocated_subsystem_nqn(std::string* subsystem_nqn);
   private:
-  const std::string& _internal_subsystem_id() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subsystem_id(const std::string& value);
-  std::string* _internal_mutable_subsystem_id();
+  const std::string& _internal_subsystem_nqn() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_subsystem_nqn(const std::string& value);
+  std::string* _internal_mutable_subsystem_nqn();
   public:
 
   // string bdev = 6;
@@ -945,7 +945,7 @@ class NVMeNamespace final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subsystem_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subsystem_nqn_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bdev_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nguid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr eui64_;
@@ -3174,16 +3174,16 @@ class NVMeControllerDeleteRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
     kControllerIdFieldNumber = 2,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // int64 controller_id = 2;
@@ -3202,7 +3202,7 @@ class NVMeControllerDeleteRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   int64_t controller_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -3722,15 +3722,15 @@ class NVMeControllerListRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeControllerListRequest)
@@ -3740,7 +3740,7 @@ class NVMeControllerListRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -4023,16 +4023,16 @@ class NVMeControllerGetRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
     kControllerIdFieldNumber = 2,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // int64 controller_id = 2;
@@ -4051,7 +4051,7 @@ class NVMeControllerGetRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   int64_t controller_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -4335,16 +4335,16 @@ class NVMeControllerStatsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
     kControllerIdFieldNumber = 2,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // int64 controller_id = 2;
@@ -4363,7 +4363,7 @@ class NVMeControllerStatsRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   int64_t controller_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -4809,15 +4809,15 @@ class NVMeNamespaceCreateResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNamespaceNqnFieldNumber = 1,
+    kNamespaceIdFieldNumber = 1,
   };
-  // int64 namespace_nqn = 1;
-  void clear_namespace_nqn();
-  int64_t namespace_nqn() const;
-  void set_namespace_nqn(int64_t value);
+  // int64 namespace_id = 1;
+  void clear_namespace_id();
+  int64_t namespace_id() const;
+  void set_namespace_id(int64_t value);
   private:
-  int64_t _internal_namespace_nqn() const;
-  void _internal_set_namespace_nqn(int64_t value);
+  int64_t _internal_namespace_id() const;
+  void _internal_set_namespace_id(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceCreateResponse)
@@ -4827,7 +4827,7 @@ class NVMeNamespaceCreateResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t namespace_nqn_;
+  int64_t namespace_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -4955,17 +4955,17 @@ class NVMeNamespaceDeleteRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
     kControllerIdFieldNumber = 2,
-    kNamespaceNqnFieldNumber = 3,
+    kNamespaceIdFieldNumber = 3,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // int64 controller_id = 2;
@@ -4977,13 +4977,13 @@ class NVMeNamespaceDeleteRequest final :
   void _internal_set_controller_id(int64_t value);
   public:
 
-  // int64 namespace_nqn = 3;
-  void clear_namespace_nqn();
-  int64_t namespace_nqn() const;
-  void set_namespace_nqn(int64_t value);
+  // int64 namespace_id = 3;
+  void clear_namespace_id();
+  int64_t namespace_id() const;
+  void set_namespace_id(int64_t value);
   private:
-  int64_t _internal_namespace_nqn() const;
-  void _internal_set_namespace_nqn(int64_t value);
+  int64_t _internal_namespace_id() const;
+  void _internal_set_namespace_id(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceDeleteRequest)
@@ -4993,9 +4993,9 @@ class NVMeNamespaceDeleteRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   int64_t controller_id_;
-  int64_t namespace_nqn_;
+  int64_t namespace_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -5514,16 +5514,16 @@ class NVMeNamespaceListRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
     kControllerIdFieldNumber = 2,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // int64 controller_id = 2;
@@ -5542,7 +5542,7 @@ class NVMeNamespaceListRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   int64_t controller_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
@@ -5826,17 +5826,17 @@ class NVMeNamespaceGetRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
     kControllerIdFieldNumber = 2,
-    kNamespaceNqnFieldNumber = 3,
+    kNamespaceIdFieldNumber = 3,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // int64 controller_id = 2;
@@ -5848,13 +5848,13 @@ class NVMeNamespaceGetRequest final :
   void _internal_set_controller_id(int64_t value);
   public:
 
-  // int64 namespace_nqn = 3;
-  void clear_namespace_nqn();
-  int64_t namespace_nqn() const;
-  void set_namespace_nqn(int64_t value);
+  // int64 namespace_id = 3;
+  void clear_namespace_id();
+  int64_t namespace_id() const;
+  void set_namespace_id(int64_t value);
   private:
-  int64_t _internal_namespace_nqn() const;
-  void _internal_set_namespace_nqn(int64_t value);
+  int64_t _internal_namespace_id() const;
+  void _internal_set_namespace_id(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceGetRequest)
@@ -5864,9 +5864,9 @@ class NVMeNamespaceGetRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   int64_t controller_id_;
-  int64_t namespace_nqn_;
+  int64_t namespace_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -6149,17 +6149,17 @@ class NVMeNamespaceStatsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSubsystemIdFieldNumber = 1,
+    kSubsystemNqnFieldNumber = 1,
     kControllerIdFieldNumber = 2,
-    kNamespaceNqnFieldNumber = 3,
+    kNamespaceIdFieldNumber = 3,
   };
-  // int64 subsystem_id = 1;
-  void clear_subsystem_id();
-  int64_t subsystem_id() const;
-  void set_subsystem_id(int64_t value);
+  // int64 subsystem_nqn = 1;
+  void clear_subsystem_nqn();
+  int64_t subsystem_nqn() const;
+  void set_subsystem_nqn(int64_t value);
   private:
-  int64_t _internal_subsystem_id() const;
-  void _internal_set_subsystem_id(int64_t value);
+  int64_t _internal_subsystem_nqn() const;
+  void _internal_set_subsystem_nqn(int64_t value);
   public:
 
   // int64 controller_id = 2;
@@ -6171,13 +6171,13 @@ class NVMeNamespaceStatsRequest final :
   void _internal_set_controller_id(int64_t value);
   public:
 
-  // int64 namespace_nqn = 3;
-  void clear_namespace_nqn();
-  int64_t namespace_nqn() const;
-  void set_namespace_nqn(int64_t value);
+  // int64 namespace_id = 3;
+  void clear_namespace_id();
+  int64_t namespace_id() const;
+  void set_namespace_id(int64_t value);
   private:
-  int64_t _internal_namespace_nqn() const;
-  void _internal_set_namespace_nqn(int64_t value);
+  int64_t _internal_namespace_id() const;
+  void _internal_set_namespace_id(int64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeNamespaceStatsRequest)
@@ -6187,9 +6187,9 @@ class NVMeNamespaceStatsRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int64_t subsystem_id_;
+  int64_t subsystem_nqn_;
   int64_t controller_id_;
-  int64_t namespace_nqn_;
+  int64_t namespace_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -6614,55 +6614,55 @@ inline void NVMeController::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.name)
 }
 
-// string subsystem_id = 3;
-inline void NVMeController::clear_subsystem_id() {
-  subsystem_id_.ClearToEmpty();
+// string subsystem_nqn = 3;
+inline void NVMeController::clear_subsystem_nqn() {
+  subsystem_nqn_.ClearToEmpty();
 }
-inline const std::string& NVMeController::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.subsystem_id)
-  return _internal_subsystem_id();
+inline const std::string& NVMeController::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeController.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void NVMeController::set_subsystem_id(ArgT0&& arg0, ArgT... args) {
+void NVMeController::set_subsystem_nqn(ArgT0&& arg0, ArgT... args) {
  
- subsystem_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.subsystem_id)
+ subsystem_nqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeController.subsystem_nqn)
 }
-inline std::string* NVMeController::mutable_subsystem_id() {
-  std::string* _s = _internal_mutable_subsystem_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeController.subsystem_id)
+inline std::string* NVMeController::mutable_subsystem_nqn() {
+  std::string* _s = _internal_mutable_subsystem_nqn();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeController.subsystem_nqn)
   return _s;
 }
-inline const std::string& NVMeController::_internal_subsystem_id() const {
-  return subsystem_id_.Get();
+inline const std::string& NVMeController::_internal_subsystem_nqn() const {
+  return subsystem_nqn_.Get();
 }
-inline void NVMeController::_internal_set_subsystem_id(const std::string& value) {
+inline void NVMeController::_internal_set_subsystem_nqn(const std::string& value) {
   
-  subsystem_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  subsystem_nqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* NVMeController::_internal_mutable_subsystem_id() {
+inline std::string* NVMeController::_internal_mutable_subsystem_nqn() {
   
-  return subsystem_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return subsystem_nqn_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* NVMeController::release_subsystem_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeController.subsystem_id)
-  return subsystem_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* NVMeController::release_subsystem_nqn() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeController.subsystem_nqn)
+  return subsystem_nqn_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void NVMeController::set_allocated_subsystem_id(std::string* subsystem_id) {
-  if (subsystem_id != nullptr) {
+inline void NVMeController::set_allocated_subsystem_nqn(std::string* subsystem_nqn) {
+  if (subsystem_nqn != nullptr) {
     
   } else {
     
   }
-  subsystem_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subsystem_id,
+  subsystem_nqn_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subsystem_nqn,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (subsystem_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    subsystem_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (subsystem_nqn_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    subsystem_nqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.subsystem_id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeController.subsystem_nqn)
 }
 
 // .opi_api.storage.v1.NvmeControllerPciId pcie_id = 4;
@@ -6866,55 +6866,55 @@ inline void NVMeNamespace::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.name)
 }
 
-// string subsystem_id = 3;
-inline void NVMeNamespace::clear_subsystem_id() {
-  subsystem_id_.ClearToEmpty();
+// string subsystem_nqn = 3;
+inline void NVMeNamespace::clear_subsystem_nqn() {
+  subsystem_nqn_.ClearToEmpty();
 }
-inline const std::string& NVMeNamespace::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.subsystem_id)
-  return _internal_subsystem_id();
+inline const std::string& NVMeNamespace::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespace.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void NVMeNamespace::set_subsystem_id(ArgT0&& arg0, ArgT... args) {
+void NVMeNamespace::set_subsystem_nqn(ArgT0&& arg0, ArgT... args) {
  
- subsystem_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.subsystem_id)
+ subsystem_nqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespace.subsystem_nqn)
 }
-inline std::string* NVMeNamespace::mutable_subsystem_id() {
-  std::string* _s = _internal_mutable_subsystem_id();
-  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.subsystem_id)
+inline std::string* NVMeNamespace::mutable_subsystem_nqn() {
+  std::string* _s = _internal_mutable_subsystem_nqn();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMeNamespace.subsystem_nqn)
   return _s;
 }
-inline const std::string& NVMeNamespace::_internal_subsystem_id() const {
-  return subsystem_id_.Get();
+inline const std::string& NVMeNamespace::_internal_subsystem_nqn() const {
+  return subsystem_nqn_.Get();
 }
-inline void NVMeNamespace::_internal_set_subsystem_id(const std::string& value) {
+inline void NVMeNamespace::_internal_set_subsystem_nqn(const std::string& value) {
   
-  subsystem_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  subsystem_nqn_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* NVMeNamespace::_internal_mutable_subsystem_id() {
+inline std::string* NVMeNamespace::_internal_mutable_subsystem_nqn() {
   
-  return subsystem_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return subsystem_nqn_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* NVMeNamespace::release_subsystem_id() {
-  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.subsystem_id)
-  return subsystem_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* NVMeNamespace::release_subsystem_nqn() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMeNamespace.subsystem_nqn)
+  return subsystem_nqn_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void NVMeNamespace::set_allocated_subsystem_id(std::string* subsystem_id) {
-  if (subsystem_id != nullptr) {
+inline void NVMeNamespace::set_allocated_subsystem_nqn(std::string* subsystem_nqn) {
+  if (subsystem_nqn != nullptr) {
     
   } else {
     
   }
-  subsystem_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subsystem_id,
+  subsystem_nqn_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), subsystem_nqn,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (subsystem_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    subsystem_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (subsystem_nqn_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    subsystem_nqn_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.subsystem_id)
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMeNamespace.subsystem_nqn)
 }
 
 // int64 controller_id = 4;
@@ -8148,24 +8148,24 @@ inline void NVMeControllerCreateResponse::set_controller_id(int64_t value) {
 
 // NVMeControllerDeleteRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeControllerDeleteRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeControllerDeleteRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeControllerDeleteRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeControllerDeleteRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeControllerDeleteRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerDeleteRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeControllerDeleteRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerDeleteRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeControllerDeleteRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeControllerDeleteRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeControllerDeleteRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerDeleteRequest.subsystem_id)
+inline void NVMeControllerDeleteRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerDeleteRequest.subsystem_nqn)
 }
 
 // int64 controller_id = 2;
@@ -8294,24 +8294,24 @@ inline void NVMeControllerUpdateRequest::set_allocated_controller(::opi_api::sto
 
 // NVMeControllerListRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeControllerListRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeControllerListRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeControllerListRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeControllerListRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeControllerListRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerListRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeControllerListRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerListRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeControllerListRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeControllerListRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeControllerListRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerListRequest.subsystem_id)
+inline void NVMeControllerListRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerListRequest.subsystem_nqn)
 }
 
 // -------------------------------------------------------------------
@@ -8362,24 +8362,24 @@ NVMeControllerListResponse::controller() const {
 
 // NVMeControllerGetRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeControllerGetRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeControllerGetRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeControllerGetRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeControllerGetRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeControllerGetRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerGetRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeControllerGetRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerGetRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeControllerGetRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeControllerGetRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeControllerGetRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerGetRequest.subsystem_id)
+inline void NVMeControllerGetRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerGetRequest.subsystem_nqn)
 }
 
 // int64 controller_id = 2;
@@ -8500,24 +8500,24 @@ inline void NVMeControllerGetResponse::set_allocated_controller(::opi_api::stora
 
 // NVMeControllerStatsRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeControllerStatsRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeControllerStatsRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeControllerStatsRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeControllerStatsRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeControllerStatsRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerStatsRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeControllerStatsRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerStatsRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeControllerStatsRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeControllerStatsRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeControllerStatsRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerStatsRequest.subsystem_id)
+inline void NVMeControllerStatsRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerStatsRequest.subsystem_nqn)
 }
 
 // int64 controller_id = 2;
@@ -8713,48 +8713,48 @@ inline void NVMeNamespaceCreateRequest::set_allocated_namespace_(::opi_api::stor
 
 // NVMeNamespaceCreateResponse
 
-// int64 namespace_nqn = 1;
-inline void NVMeNamespaceCreateResponse::clear_namespace_nqn() {
-  namespace_nqn_ = int64_t{0};
+// int64 namespace_id = 1;
+inline void NVMeNamespaceCreateResponse::clear_namespace_id() {
+  namespace_id_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceCreateResponse::_internal_namespace_nqn() const {
-  return namespace_nqn_;
+inline int64_t NVMeNamespaceCreateResponse::_internal_namespace_id() const {
+  return namespace_id_;
 }
-inline int64_t NVMeNamespaceCreateResponse::namespace_nqn() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_nqn)
-  return _internal_namespace_nqn();
+inline int64_t NVMeNamespaceCreateResponse::namespace_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_id)
+  return _internal_namespace_id();
 }
-inline void NVMeNamespaceCreateResponse::_internal_set_namespace_nqn(int64_t value) {
+inline void NVMeNamespaceCreateResponse::_internal_set_namespace_id(int64_t value) {
   
-  namespace_nqn_ = value;
+  namespace_id_ = value;
 }
-inline void NVMeNamespaceCreateResponse::set_namespace_nqn(int64_t value) {
-  _internal_set_namespace_nqn(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_nqn)
+inline void NVMeNamespaceCreateResponse::set_namespace_id(int64_t value) {
+  _internal_set_namespace_id(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceCreateResponse.namespace_id)
 }
 
 // -------------------------------------------------------------------
 
 // NVMeNamespaceDeleteRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeNamespaceDeleteRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeNamespaceDeleteRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceDeleteRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeNamespaceDeleteRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeNamespaceDeleteRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceDeleteRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeNamespaceDeleteRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceDeleteRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeNamespaceDeleteRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeNamespaceDeleteRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeNamespaceDeleteRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.subsystem_id)
+inline void NVMeNamespaceDeleteRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.subsystem_nqn)
 }
 
 // int64 controller_id = 2;
@@ -8777,24 +8777,24 @@ inline void NVMeNamespaceDeleteRequest::set_controller_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.controller_id)
 }
 
-// int64 namespace_nqn = 3;
-inline void NVMeNamespaceDeleteRequest::clear_namespace_nqn() {
-  namespace_nqn_ = int64_t{0};
+// int64 namespace_id = 3;
+inline void NVMeNamespaceDeleteRequest::clear_namespace_id() {
+  namespace_id_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceDeleteRequest::_internal_namespace_nqn() const {
-  return namespace_nqn_;
+inline int64_t NVMeNamespaceDeleteRequest::_internal_namespace_id() const {
+  return namespace_id_;
 }
-inline int64_t NVMeNamespaceDeleteRequest::namespace_nqn() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_nqn)
-  return _internal_namespace_nqn();
+inline int64_t NVMeNamespaceDeleteRequest::namespace_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_id)
+  return _internal_namespace_id();
 }
-inline void NVMeNamespaceDeleteRequest::_internal_set_namespace_nqn(int64_t value) {
+inline void NVMeNamespaceDeleteRequest::_internal_set_namespace_id(int64_t value) {
   
-  namespace_nqn_ = value;
+  namespace_id_ = value;
 }
-inline void NVMeNamespaceDeleteRequest::set_namespace_nqn(int64_t value) {
-  _internal_set_namespace_nqn(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_nqn)
+inline void NVMeNamespaceDeleteRequest::set_namespace_id(int64_t value) {
+  _internal_set_namespace_id(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceDeleteRequest.namespace_id)
 }
 
 // -------------------------------------------------------------------
@@ -8903,24 +8903,24 @@ inline void NVMeNamespaceUpdateRequest::set_allocated_namespace_(::opi_api::stor
 
 // NVMeNamespaceListRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeNamespaceListRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeNamespaceListRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceListRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeNamespaceListRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeNamespaceListRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceListRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeNamespaceListRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceListRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeNamespaceListRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeNamespaceListRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeNamespaceListRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceListRequest.subsystem_id)
+inline void NVMeNamespaceListRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceListRequest.subsystem_nqn)
 }
 
 // int64 controller_id = 2;
@@ -8991,24 +8991,24 @@ NVMeNamespaceListResponse::namespace_() const {
 
 // NVMeNamespaceGetRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeNamespaceGetRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeNamespaceGetRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceGetRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeNamespaceGetRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeNamespaceGetRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceGetRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeNamespaceGetRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceGetRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeNamespaceGetRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeNamespaceGetRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeNamespaceGetRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.subsystem_id)
+inline void NVMeNamespaceGetRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.subsystem_nqn)
 }
 
 // int64 controller_id = 2;
@@ -9031,24 +9031,24 @@ inline void NVMeNamespaceGetRequest::set_controller_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.controller_id)
 }
 
-// int64 namespace_nqn = 3;
-inline void NVMeNamespaceGetRequest::clear_namespace_nqn() {
-  namespace_nqn_ = int64_t{0};
+// int64 namespace_id = 3;
+inline void NVMeNamespaceGetRequest::clear_namespace_id() {
+  namespace_id_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceGetRequest::_internal_namespace_nqn() const {
-  return namespace_nqn_;
+inline int64_t NVMeNamespaceGetRequest::_internal_namespace_id() const {
+  return namespace_id_;
 }
-inline int64_t NVMeNamespaceGetRequest::namespace_nqn() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_nqn)
-  return _internal_namespace_nqn();
+inline int64_t NVMeNamespaceGetRequest::namespace_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_id)
+  return _internal_namespace_id();
 }
-inline void NVMeNamespaceGetRequest::_internal_set_namespace_nqn(int64_t value) {
+inline void NVMeNamespaceGetRequest::_internal_set_namespace_id(int64_t value) {
   
-  namespace_nqn_ = value;
+  namespace_id_ = value;
 }
-inline void NVMeNamespaceGetRequest::set_namespace_nqn(int64_t value) {
-  _internal_set_namespace_nqn(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_nqn)
+inline void NVMeNamespaceGetRequest::set_namespace_id(int64_t value) {
+  _internal_set_namespace_id(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceGetRequest.namespace_id)
 }
 
 // -------------------------------------------------------------------
@@ -9149,24 +9149,24 @@ inline void NVMeNamespaceGetResponse::set_allocated_namespace_(::opi_api::storag
 
 // NVMeNamespaceStatsRequest
 
-// int64 subsystem_id = 1;
-inline void NVMeNamespaceStatsRequest::clear_subsystem_id() {
-  subsystem_id_ = int64_t{0};
+// int64 subsystem_nqn = 1;
+inline void NVMeNamespaceStatsRequest::clear_subsystem_nqn() {
+  subsystem_nqn_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceStatsRequest::_internal_subsystem_id() const {
-  return subsystem_id_;
+inline int64_t NVMeNamespaceStatsRequest::_internal_subsystem_nqn() const {
+  return subsystem_nqn_;
 }
-inline int64_t NVMeNamespaceStatsRequest::subsystem_id() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceStatsRequest.subsystem_id)
-  return _internal_subsystem_id();
+inline int64_t NVMeNamespaceStatsRequest::subsystem_nqn() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceStatsRequest.subsystem_nqn)
+  return _internal_subsystem_nqn();
 }
-inline void NVMeNamespaceStatsRequest::_internal_set_subsystem_id(int64_t value) {
+inline void NVMeNamespaceStatsRequest::_internal_set_subsystem_nqn(int64_t value) {
   
-  subsystem_id_ = value;
+  subsystem_nqn_ = value;
 }
-inline void NVMeNamespaceStatsRequest::set_subsystem_id(int64_t value) {
-  _internal_set_subsystem_id(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.subsystem_id)
+inline void NVMeNamespaceStatsRequest::set_subsystem_nqn(int64_t value) {
+  _internal_set_subsystem_nqn(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.subsystem_nqn)
 }
 
 // int64 controller_id = 2;
@@ -9189,24 +9189,24 @@ inline void NVMeNamespaceStatsRequest::set_controller_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.controller_id)
 }
 
-// int64 namespace_nqn = 3;
-inline void NVMeNamespaceStatsRequest::clear_namespace_nqn() {
-  namespace_nqn_ = int64_t{0};
+// int64 namespace_id = 3;
+inline void NVMeNamespaceStatsRequest::clear_namespace_id() {
+  namespace_id_ = int64_t{0};
 }
-inline int64_t NVMeNamespaceStatsRequest::_internal_namespace_nqn() const {
-  return namespace_nqn_;
+inline int64_t NVMeNamespaceStatsRequest::_internal_namespace_id() const {
+  return namespace_id_;
 }
-inline int64_t NVMeNamespaceStatsRequest::namespace_nqn() const {
-  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_nqn)
-  return _internal_namespace_nqn();
+inline int64_t NVMeNamespaceStatsRequest::namespace_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_id)
+  return _internal_namespace_id();
 }
-inline void NVMeNamespaceStatsRequest::_internal_set_namespace_nqn(int64_t value) {
+inline void NVMeNamespaceStatsRequest::_internal_set_namespace_id(int64_t value) {
   
-  namespace_nqn_ = value;
+  namespace_id_ = value;
 }
-inline void NVMeNamespaceStatsRequest::set_namespace_nqn(int64_t value) {
-  _internal_set_namespace_nqn(value);
-  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_nqn)
+inline void NVMeNamespaceStatsRequest::set_namespace_id(int64_t value) {
+  _internal_set_namespace_id(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeNamespaceStatsRequest.namespace_id)
 }
 
 // -------------------------------------------------------------------

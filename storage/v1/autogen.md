@@ -910,7 +910,7 @@ virtual functions under the physical function.
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
-| subsystem_id | [string](#string) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | pcie_id | [NvmeControllerPciId](#opi_api-storage-v1-NvmeControllerPciId) |  |  |
 | max_io_qps | [int64](#int64) |  |  |
 | max_ns | [int64](#int64) |  |  |
@@ -958,7 +958,7 @@ virtual functions under the physical function.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -984,7 +984,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -1015,7 +1015,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 
 
 
@@ -1045,7 +1045,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -1104,7 +1104,7 @@ Intentionally empty.
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
-| subsystem_id | [string](#string) |  |  |
+| subsystem_nqn | [string](#string) |  |  |
 | controller_id | [int64](#int64) |  |  |
 | nsid | [int64](#int64) |  |  |
 | bdev | [string](#string) |  |  |
@@ -1144,7 +1144,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| namespace_nqn | [int64](#int64) |  |  |
+| namespace_id | [int64](#int64) |  |  |
 
 
 
@@ -1159,9 +1159,9 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
-| namespace_nqn | [int64](#int64) |  |  |
+| namespace_id | [int64](#int64) |  |  |
 
 
 
@@ -1186,9 +1186,9 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
-| namespace_nqn | [int64](#int64) |  |  |
+| namespace_id | [int64](#int64) |  |  |
 
 
 
@@ -1218,7 +1218,7 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
 
 
@@ -1249,9 +1249,9 @@ Intentionally empty.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subsystem_id | [int64](#int64) |  |  |
+| subsystem_nqn | [int64](#int64) |  |  |
 | controller_id | [int64](#int64) |  |  |
-| namespace_nqn | [int64](#int64) |  |  |
+| namespace_id | [int64](#int64) |  |  |
 
 
 

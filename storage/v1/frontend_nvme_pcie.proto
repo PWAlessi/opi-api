@@ -48,7 +48,7 @@ message NVMeSubsystem {
 message NVMeController {
     int64 id = 1;
     string name = 2;
-    string subsystem_id = 3;
+    string subsystem_nqn = 3;
     NvmeControllerPciId pcie_id = 4;
     int64 max_io_qps = 5;
     int64 max_ns = 6;
@@ -57,7 +57,7 @@ message NVMeController {
 message NVMeNamespace {
     int64 id = 1;
     string name = 2;
-    string subsystem_id = 3;
+    string subsystem_nqn = 3;
     int64 controller_id = 4;
     int64 nsid = 5;
     string bdev = 6;
@@ -127,7 +127,7 @@ message NVMeControllerCreateResponse {
 }
 
 message NVMeControllerDeleteRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -144,7 +144,7 @@ message NVMeControllerUpdateResponse {
 }
 
 message NVMeControllerListRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
 }
 
 message NVMeControllerListResponse {
@@ -152,7 +152,7 @@ message NVMeControllerListResponse {
 }
 
 message NVMeControllerGetRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -161,7 +161,7 @@ message NVMeControllerGetResponse {
 }
 
 message NVMeControllerStatsRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -175,13 +175,13 @@ message NVMeNamespaceCreateRequest {
 }
 
 message NVMeNamespaceCreateResponse {
-    int64 namespace_nqn = 1;
+    int64 namespace_id = 1;
 }
 
 message NVMeNamespaceDeleteRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
     int64 controller_id = 2;
-    int64 namespace_nqn = 3;
+    int64 namespace_id = 3;
 }
 
 message NVMeNamespaceDeleteResponse {
@@ -197,7 +197,7 @@ message NVMeNamespaceUpdateResponse {
 }
 
 message NVMeNamespaceListRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
     int64 controller_id = 2;
 }
 
@@ -206,9 +206,9 @@ message NVMeNamespaceListResponse {
 }
 
 message NVMeNamespaceGetRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
     int64 controller_id = 2;
-    int64 namespace_nqn = 3;
+    int64 namespace_id = 3;
 }
 
 message NVMeNamespaceGetResponse {
@@ -216,9 +216,9 @@ message NVMeNamespaceGetResponse {
 }
 
 message NVMeNamespaceStatsRequest {
-    int64 subsystem_id = 1;
+    int64 subsystem_nqn = 1;
     int64 controller_id = 2;
-    int64 namespace_nqn = 3;
+    int64 namespace_id = 3;
 }
 
 message NVMeNamespaceStatsResponse {
