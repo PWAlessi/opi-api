@@ -123,7 +123,7 @@ message NVMeControllerCreateRequest {
 }
 
 message NVMeControllerCreateResponse {
-    // Intentionally empty.
+    int64 controller_id = 1;
 }
 
 message NVMeControllerDeleteRequest {

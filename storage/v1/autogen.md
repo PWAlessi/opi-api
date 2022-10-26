@@ -938,7 +938,12 @@ virtual functions under the physical function.
 <a name="opi_api-storage-v1-NVMeControllerCreateResponse"></a>
 
 ### NVMeControllerCreateResponse
-Intentionally empty.
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| controller_id | [int64](#int64) |  |  |
 
 
 

@@ -2907,9 +2907,10 @@ class NVMeControllerCreateRequest final :
 // -------------------------------------------------------------------
 
 class NVMeControllerCreateResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.NVMeControllerCreateResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:opi_api.storage.v1.NVMeControllerCreateResponse) */ {
  public:
   inline NVMeControllerCreateResponse() : NVMeControllerCreateResponse(nullptr) {}
+  ~NVMeControllerCreateResponse() override;
   explicit constexpr NVMeControllerCreateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   NVMeControllerCreateResponse(const NVMeControllerCreateResponse& from);
@@ -2982,15 +2983,27 @@ class NVMeControllerCreateResponse final :
   NVMeControllerCreateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<NVMeControllerCreateResponse>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const NVMeControllerCreateResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const NVMeControllerCreateResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const NVMeControllerCreateResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const NVMeControllerCreateResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NVMeControllerCreateResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -3001,6 +3014,8 @@ class NVMeControllerCreateResponse final :
   explicit NVMeControllerCreateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -3012,6 +3027,18 @@ class NVMeControllerCreateResponse final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kControllerIdFieldNumber = 1,
+  };
+  // int64 controller_id = 1;
+  void clear_controller_id();
+  int64_t controller_id() const;
+  void set_controller_id(int64_t value);
+  private:
+  int64_t _internal_controller_id() const;
+  void _internal_set_controller_id(int64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:opi_api.storage.v1.NVMeControllerCreateResponse)
  private:
   class _Internal;
@@ -3019,6 +3046,7 @@ class NVMeControllerCreateResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  int64_t controller_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_frontend_5fnvme_5fpcie_2eproto;
 };
@@ -8095,6 +8123,26 @@ inline void NVMeControllerCreateRequest::set_allocated_controller(::opi_api::sto
 // -------------------------------------------------------------------
 
 // NVMeControllerCreateResponse
+
+// int64 controller_id = 1;
+inline void NVMeControllerCreateResponse::clear_controller_id() {
+  controller_id_ = int64_t{0};
+}
+inline int64_t NVMeControllerCreateResponse::_internal_controller_id() const {
+  return controller_id_;
+}
+inline int64_t NVMeControllerCreateResponse::controller_id() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMeControllerCreateResponse.controller_id)
+  return _internal_controller_id();
+}
+inline void NVMeControllerCreateResponse::_internal_set_controller_id(int64_t value) {
+  
+  controller_id_ = value;
+}
+inline void NVMeControllerCreateResponse::set_controller_id(int64_t value) {
+  _internal_set_controller_id(value);
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMeControllerCreateResponse.controller_id)
+}
 
 // -------------------------------------------------------------------
 
