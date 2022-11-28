@@ -1,0 +1,228 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (c) 2022 Dell Inc, or its subsidiaries.
+
+syntax = "proto3";
+package opi_api.storage.v1;
+option go_package = "github.com/opiproject/opi-api/storage/v1/gen/go";
+import "common.proto";
+import "uuid.proto";
+
+// Front End (host-facing) APIs.
+
+// NVMe/PCIe emulation
+
+service NVMeSubsystemService {
+    rpc NVMeSubsystemCreate (NVMeSubsystemCreateRequest) returns (NVMeSubsystemCreateResponse) {}
+    rpc NVMeSubsystemDelete (NVMeSubsystemDeleteRequest) returns (NVMeSubsystemDeleteResponse) {}
+    rpc NVMeSubsystemUpdate (NVMeSubsystemUpdateRequest) returns (NVMeSubsystemUpdateResponse) {}
+    rpc NVMeSubsystemList   (NVMeSubsystemListRequest)   returns (NVMeSubsystemListResponse)   {}
+    rpc NVMeSubsystemGet    (NVMeSubsystemGetRequest)    returns (NVMeSubsystemGetResponse)    {}
+    rpc NVMeSubsystemStats  (NVMeSubsystemStatsRequest)  returns (NVMeSubsystemStatsResponse)  {}
+}
+
+service NVMeControllerService {
+    rpc NVMeControllerCreate (NVMeControllerCreateRequest) returns (NVMeControllerCreateResponse) {}
+    rpc NVMeControllerDelete (NVMeControllerDeleteRequest) returns (NVMeControllerDeleteResponse) {}
+    rpc NVMeControllerUpdate (NVMeControllerUpdateRequest) returns (NVMeControllerUpdateResponse) {}
+    rpc NVMeControllerList   (NVMeControllerListRequest)   returns (NVMeControllerListResponse)   {}
+    rpc NVMeControllerGet    (NVMeControllerGetRequest)    returns (NVMeControllerGetResponse)    {}
+    rpc NVMeControllerStats  (NVMeControllerStatsRequest)  returns (NVMeControllerStatsResponse)  {}
+}
+
+service NVMeNamespaceService {
+    rpc NVMeNamespaceCreate (NVMeNamespaceCreateRequest) returns (NVMeNamespaceCreateResponse) {}
+    rpc NVMeNamespaceDelete (NVMeNamespaceDeleteRequest) returns (NVMeNamespaceDeleteResponse) {}
+    rpc NVMeNamespaceUpdate (NVMeNamespaceUpdateRequest) returns (NVMeNamespaceUpdateResponse) {}
+    rpc NVMeNamespaceList   (NVMeNamespaceListRequest)   returns (NVMeNamespaceListResponse)   {}
+    rpc NVMeNamespaceGet    (NVMeNamespaceGetRequest)    returns (NVMeNamespaceGetResponse)    {}
+    rpc NVMeNamespaceStats  (NVMeNamespaceStatsRequest)  returns (NVMeNamespaceStatsResponse)  {}
+}
+
+message NVMeSubsystem {
+    string nqn = 1;
+    string serial_number = 2;
+    string model_number = 3;
+    int64 max_ns = 4;
+}
+
+message NVMeController {
+    int64 id = 1;
+    string name = 2;
+    string subsystem_nqn = 3;
+    NvmeControllerPciId pcie_id = 4;
+    int64 max_io_qps = 5;
+    int64 max_ns = 6;
+}
+
+message NVMeNamespace {
+    int64 id = 1;
+    string name = 2;
+    string subsystem_nqn = 3;
+    int64 controller_id = 4;
+    int64 nsid = 5;
+    string bdev = 6;
+    int64 block_size = 7;
+    int64 num_blocks = 8;
+    string nguid = 9;
+    string eui64 = 10;
+    common.v1.Uuid uuid = 11;
+    string multipath = 12;
+    string authentication = 13;
+}
+
+message NVMeSubsystemCreateRequest {
+    NVMeSubsystem subsystem = 1;
+}
+
+message NVMeSubsystemCreateResponse {
+    common.v1.Uuid uuid = 1;
+}
+
+message NVMeSubsystemDeleteRequest {
+    string nqn = 1;
+}
+
+message NVMeSubsystemDeleteResponse {
+    uint32 result = 1;
+}
+
+message NVMeSubsystemUpdateRequest {
+    NVMeSubsystem subsystem = 1;
+}
+
+message NVMeSubsystemUpdateResponse {
+    uint32 result = 1;
+}
+
+message NVMeSubsystemListRequest {
+    // Intentionally empty.
+}
+
+message NVMeSubsystemListResponse {
+    repeated NVMeSubsystem subsystem = 1;
+}
+
+message NVMeSubsystemGetRequest {
+    string nqn = 1;
+}
+
+message NVMeSubsystemGetResponse {
+    NVMeSubsystem subsystem = 1;
+}
+
+message NVMeSubsystemStatsRequest {
+    string nqn = 1;
+}
+
+message NVMeSubsystemStatsResponse {
+    string stats = 1;
+}
+
+message NVMeControllerCreateRequest {
+    NVMeController controller = 1;
+}
+
+message NVMeControllerCreateResponse {
+    int64 controller_id = 1;
+}
+
+message NVMeControllerDeleteRequest {
+    string subsystem_nqn = 1;
+    int64 controller_id = 2;
+}
+
+message NVMeControllerDeleteResponse {
+    // Intentionally empty.
+}
+
+message NVMeControllerUpdateRequest {
+    NVMeController controller = 1;
+}
+
+message NVMeControllerUpdateResponse {
+    // Intentionally empty.
+}
+
+message NVMeControllerListRequest {
+    string subsystem_nqn = 1;
+}
+
+message NVMeControllerListResponse {
+    repeated NVMeController controller = 1;
+}
+
+message NVMeControllerGetRequest {
+    string subsystem_nqn = 1;
+    int64 controller_id = 2;
+}
+
+message NVMeControllerGetResponse {
+    NVMeController controller = 1;
+}
+
+message NVMeControllerStatsRequest {
+    string subsystem_nqn = 1;
+    int64 controller_id = 2;
+}
+
+message NVMeControllerStatsResponse {
+    int64 id = 1;
+    string stats = 2;
+}
+
+message NVMeNamespaceCreateRequest {
+    NVMeNamespace namespace = 1;
+}
+
+message NVMeNamespaceCreateResponse {
+    int64 namespace_id = 1;
+}
+
+message NVMeNamespaceDeleteRequest {
+    string subsystem_nqn = 1;
+    int64 controller_id = 2;
+    int64 namespace_id = 3;
+}
+
+message NVMeNamespaceDeleteResponse {
+    // Intentionally empty.
+}
+
+message NVMeNamespaceUpdateRequest {
+    NVMeNamespace namespace = 1;
+}
+
+message NVMeNamespaceUpdateResponse {
+    // Intentionally empty.
+}
+
+message NVMeNamespaceListRequest {
+    string subsystem_nqn = 1;
+    int64 controller_id = 2;
+}
+
+message NVMeNamespaceListResponse {
+    repeated NVMeNamespace namespace = 1;
+}
+
+message NVMeNamespaceGetRequest {
+    string subsystem_nqn = 1;
+    int64 controller_id = 2;
+    int64 namespace_id = 3;
+}
+
+message NVMeNamespaceGetResponse {
+    NVMeNamespace namespace = 1;
+}
+
+message NVMeNamespaceStatsRequest {
+    string subsystem_nqn = 1;
+    int64 controller_id = 2;
+    int64 namespace_id = 3;
+}
+
+message NVMeNamespaceStatsResponse {
+    int64 id = 1;
+    string stats = 2;
+}
+
