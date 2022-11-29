@@ -328,19 +328,34 @@ class NVMfRemoteController final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTraddrFieldNumber = 4,
-    kSubnqnFieldNumber = 6,
+    kNameFieldNumber = 2,
+    kTraddrFieldNumber = 5,
+    kSubnqnFieldNumber = 7,
     kIdFieldNumber = 1,
-    kTrtypeFieldNumber = 2,
-    kAdrfamFieldNumber = 3,
-    kTrsvcidFieldNumber = 5,
-    kHdgstFieldNumber = 7,
-    kDdgstFieldNumber = 8,
-    kMultipathFieldNumber = 9,
-    kIoQueuesCountFieldNumber = 10,
-    kQueueSizeFieldNumber = 11,
+    kTrtypeFieldNumber = 3,
+    kAdrfamFieldNumber = 4,
+    kTrsvcidFieldNumber = 6,
+    kHdgstFieldNumber = 8,
+    kDdgstFieldNumber = 9,
+    kMultipathFieldNumber = 10,
+    kIoQueuesCountFieldNumber = 11,
+    kQueueSizeFieldNumber = 12,
   };
-  // string traddr = 4;
+  // string name = 2;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string traddr = 5;
   void clear_traddr();
   const std::string& traddr() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -354,7 +369,7 @@ class NVMfRemoteController final :
   std::string* _internal_mutable_traddr();
   public:
 
-  // string subnqn = 6;
+  // string subnqn = 7;
   void clear_subnqn();
   const std::string& subnqn() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -377,7 +392,7 @@ class NVMfRemoteController final :
   void _internal_set_id(int64_t value);
   public:
 
-  // .opi_api.storage.v1.NvmeTransportType trtype = 2;
+  // .opi_api.storage.v1.NvmeTransportType trtype = 3;
   void clear_trtype();
   ::opi_api::storage::v1::NvmeTransportType trtype() const;
   void set_trtype(::opi_api::storage::v1::NvmeTransportType value);
@@ -386,7 +401,7 @@ class NVMfRemoteController final :
   void _internal_set_trtype(::opi_api::storage::v1::NvmeTransportType value);
   public:
 
-  // .opi_api.storage.v1.NvmeAddressFamily adrfam = 3;
+  // .opi_api.storage.v1.NvmeAddressFamily adrfam = 4;
   void clear_adrfam();
   ::opi_api::storage::v1::NvmeAddressFamily adrfam() const;
   void set_adrfam(::opi_api::storage::v1::NvmeAddressFamily value);
@@ -395,7 +410,7 @@ class NVMfRemoteController final :
   void _internal_set_adrfam(::opi_api::storage::v1::NvmeAddressFamily value);
   public:
 
-  // int64 trsvcid = 5;
+  // int64 trsvcid = 6;
   void clear_trsvcid();
   int64_t trsvcid() const;
   void set_trsvcid(int64_t value);
@@ -404,7 +419,7 @@ class NVMfRemoteController final :
   void _internal_set_trsvcid(int64_t value);
   public:
 
-  // bool hdgst = 7;
+  // bool hdgst = 8;
   void clear_hdgst();
   bool hdgst() const;
   void set_hdgst(bool value);
@@ -413,7 +428,7 @@ class NVMfRemoteController final :
   void _internal_set_hdgst(bool value);
   public:
 
-  // bool ddgst = 8;
+  // bool ddgst = 9;
   void clear_ddgst();
   bool ddgst() const;
   void set_ddgst(bool value);
@@ -422,7 +437,7 @@ class NVMfRemoteController final :
   void _internal_set_ddgst(bool value);
   public:
 
-  // .opi_api.storage.v1.NvmeMultipath multipath = 9;
+  // .opi_api.storage.v1.NvmeMultipath multipath = 10;
   void clear_multipath();
   ::opi_api::storage::v1::NvmeMultipath multipath() const;
   void set_multipath(::opi_api::storage::v1::NvmeMultipath value);
@@ -431,7 +446,7 @@ class NVMfRemoteController final :
   void _internal_set_multipath(::opi_api::storage::v1::NvmeMultipath value);
   public:
 
-  // int64 io_queues_count = 10;
+  // int64 io_queues_count = 11;
   void clear_io_queues_count();
   int64_t io_queues_count() const;
   void set_io_queues_count(int64_t value);
@@ -440,7 +455,7 @@ class NVMfRemoteController final :
   void _internal_set_io_queues_count(int64_t value);
   public:
 
-  // int64 queue_size = 11;
+  // int64 queue_size = 12;
   void clear_queue_size();
   int64_t queue_size() const;
   void set_queue_size(int64_t value);
@@ -456,6 +471,7 @@ class NVMfRemoteController final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traddr_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr subnqn_;
   int64_t id_;
@@ -2212,7 +2228,58 @@ inline void NVMfRemoteController::set_id(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.id)
 }
 
-// .opi_api.storage.v1.NvmeTransportType trtype = 2;
+// string name = 2;
+inline void NVMfRemoteController::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& NVMfRemoteController::name() const {
+  // @@protoc_insertion_point(field_get:opi_api.storage.v1.NVMfRemoteController.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void NVMfRemoteController::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.name)
+}
+inline std::string* NVMfRemoteController::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:opi_api.storage.v1.NVMfRemoteController.name)
+  return _s;
+}
+inline const std::string& NVMfRemoteController::_internal_name() const {
+  return name_.Get();
+}
+inline void NVMfRemoteController::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* NVMfRemoteController::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* NVMfRemoteController::release_name() {
+  // @@protoc_insertion_point(field_release:opi_api.storage.v1.NVMfRemoteController.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void NVMfRemoteController::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMfRemoteController.name)
+}
+
+// .opi_api.storage.v1.NvmeTransportType trtype = 3;
 inline void NVMfRemoteController::clear_trtype() {
   trtype_ = 0;
 }
@@ -2232,7 +2299,7 @@ inline void NVMfRemoteController::set_trtype(::opi_api::storage::v1::NvmeTranspo
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.trtype)
 }
 
-// .opi_api.storage.v1.NvmeAddressFamily adrfam = 3;
+// .opi_api.storage.v1.NvmeAddressFamily adrfam = 4;
 inline void NVMfRemoteController::clear_adrfam() {
   adrfam_ = 0;
 }
@@ -2252,7 +2319,7 @@ inline void NVMfRemoteController::set_adrfam(::opi_api::storage::v1::NvmeAddress
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.adrfam)
 }
 
-// string traddr = 4;
+// string traddr = 5;
 inline void NVMfRemoteController::clear_traddr() {
   traddr_.ClearToEmpty();
 }
@@ -2303,7 +2370,7 @@ inline void NVMfRemoteController::set_allocated_traddr(std::string* traddr) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMfRemoteController.traddr)
 }
 
-// int64 trsvcid = 5;
+// int64 trsvcid = 6;
 inline void NVMfRemoteController::clear_trsvcid() {
   trsvcid_ = int64_t{0};
 }
@@ -2323,7 +2390,7 @@ inline void NVMfRemoteController::set_trsvcid(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.trsvcid)
 }
 
-// string subnqn = 6;
+// string subnqn = 7;
 inline void NVMfRemoteController::clear_subnqn() {
   subnqn_.ClearToEmpty();
 }
@@ -2374,7 +2441,7 @@ inline void NVMfRemoteController::set_allocated_subnqn(std::string* subnqn) {
   // @@protoc_insertion_point(field_set_allocated:opi_api.storage.v1.NVMfRemoteController.subnqn)
 }
 
-// bool hdgst = 7;
+// bool hdgst = 8;
 inline void NVMfRemoteController::clear_hdgst() {
   hdgst_ = false;
 }
@@ -2394,7 +2461,7 @@ inline void NVMfRemoteController::set_hdgst(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.hdgst)
 }
 
-// bool ddgst = 8;
+// bool ddgst = 9;
 inline void NVMfRemoteController::clear_ddgst() {
   ddgst_ = false;
 }
@@ -2414,7 +2481,7 @@ inline void NVMfRemoteController::set_ddgst(bool value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.ddgst)
 }
 
-// .opi_api.storage.v1.NvmeMultipath multipath = 9;
+// .opi_api.storage.v1.NvmeMultipath multipath = 10;
 inline void NVMfRemoteController::clear_multipath() {
   multipath_ = 0;
 }
@@ -2434,7 +2501,7 @@ inline void NVMfRemoteController::set_multipath(::opi_api::storage::v1::NvmeMult
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.multipath)
 }
 
-// int64 io_queues_count = 10;
+// int64 io_queues_count = 11;
 inline void NVMfRemoteController::clear_io_queues_count() {
   io_queues_count_ = int64_t{0};
 }
@@ -2454,7 +2521,7 @@ inline void NVMfRemoteController::set_io_queues_count(int64_t value) {
   // @@protoc_insertion_point(field_set:opi_api.storage.v1.NVMfRemoteController.io_queues_count)
 }
 
-// int64 queue_size = 11;
+// int64 queue_size = 12;
 inline void NVMfRemoteController::clear_queue_size() {
   queue_size_ = int64_t{0};
 }

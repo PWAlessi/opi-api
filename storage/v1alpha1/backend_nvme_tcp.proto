@@ -22,16 +22,17 @@ service NVMfRemoteControllerService {
 
 message NVMfRemoteController {
     int64 id = 1;
-    NvmeTransportType trtype = 2;
-    NvmeAddressFamily adrfam = 3;
-    string traddr = 4;
-    int64 trsvcid = 5;
-    string subnqn = 6;
-    bool hdgst = 7;
-    bool ddgst = 8;
-    NvmeMultipath multipath = 9;
-    int64 io_queues_count = 10;
-    int64 queue_size = 11;
+    string name  = 2;
+    NvmeTransportType trtype = 3;
+    NvmeAddressFamily adrfam = 4;
+    string traddr = 5;
+    int64 trsvcid = 6;
+    string subnqn = 7;
+    bool hdgst = 8;
+    bool ddgst = 9;
+    NvmeMultipath multipath = 10;
+    int64 io_queues_count = 11;
+    int64 queue_size = 12;
 }
 
 message NVMfRemoteControllerConnectRequest {
