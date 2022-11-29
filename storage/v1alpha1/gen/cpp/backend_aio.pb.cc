@@ -21,7 +21,8 @@ namespace storage {
 namespace v1 {
 constexpr AioController::AioController(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : filename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , filename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , handle_(nullptr)
   , uuid_(nullptr)
   , block_size_(int64_t{0})
@@ -158,6 +159,7 @@ const uint32_t TableStruct_backend_5faio_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::AioController, handle_),
+  PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::AioController, name_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::AioController, block_size_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::AioController, blocks_count_),
   PROTOBUF_FIELD_OFFSET(::opi_api::storage::v1::AioController, uuid_),
@@ -228,15 +230,15 @@ const uint32_t TableStruct_backend_5faio_2eproto::offsets[] PROTOBUF_SECTION_VAR
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::opi_api::storage::v1::AioController)},
-  { 11, -1, -1, sizeof(::opi_api::storage::v1::AioControllerCreateRequest)},
-  { 18, -1, -1, sizeof(::opi_api::storage::v1::AioControllerDeleteRequest)},
-  { 25, -1, -1, sizeof(::opi_api::storage::v1::AioControllerUpdateRequest)},
-  { 32, -1, -1, sizeof(::opi_api::storage::v1::AioControllerList)},
-  { 39, -1, -1, sizeof(::opi_api::storage::v1::AioControllerGetRequest)},
-  { 46, -1, -1, sizeof(::opi_api::storage::v1::AioControllerGetListRequest)},
-  { 52, -1, -1, sizeof(::opi_api::storage::v1::AioControllerGetStatsRequest)},
-  { 59, -1, -1, sizeof(::opi_api::storage::v1::AioControllerStatsRequest)},
-  { 66, -1, -1, sizeof(::opi_api::storage::v1::AioControllerStats)},
+  { 12, -1, -1, sizeof(::opi_api::storage::v1::AioControllerCreateRequest)},
+  { 19, -1, -1, sizeof(::opi_api::storage::v1::AioControllerDeleteRequest)},
+  { 26, -1, -1, sizeof(::opi_api::storage::v1::AioControllerUpdateRequest)},
+  { 33, -1, -1, sizeof(::opi_api::storage::v1::AioControllerList)},
+  { 40, -1, -1, sizeof(::opi_api::storage::v1::AioControllerGetRequest)},
+  { 47, -1, -1, sizeof(::opi_api::storage::v1::AioControllerGetListRequest)},
+  { 53, -1, -1, sizeof(::opi_api::storage::v1::AioControllerGetStatsRequest)},
+  { 60, -1, -1, sizeof(::opi_api::storage::v1::AioControllerStatsRequest)},
+  { 67, -1, -1, sizeof(::opi_api::storage::v1::AioControllerStats)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -255,47 +257,47 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_backend_5faio_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021backend_aio.proto\022\022opi_api.storage.v1\032"
   "\033google/protobuf/empty.proto\032\020object_key"
-  ".proto\032\nuuid.proto\"\240\001\n\rAioController\022,\n\006"
+  ".proto\032\nuuid.proto\"\256\001\n\rAioController\022,\n\006"
   "handle\030\001 \001(\0132\034.opi_api.common.v1.ObjectK"
-  "ey\022\022\n\nblock_size\030\002 \001(\003\022\024\n\014blocks_count\030\003"
-  " \001(\003\022%\n\004uuid\030\004 \001(\0132\027.opi_api.common.v1.U"
-  "uid\022\020\n\010filename\030\005 \001(\t\"O\n\032AioControllerCr"
-  "eateRequest\0221\n\006device\030\001 \001(\0132!.opi_api.st"
-  "orage.v1.AioController\"J\n\032AioControllerD"
-  "eleteRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.c"
-  "ommon.v1.ObjectKey\"O\n\032AioControllerUpdat"
-  "eRequest\0221\n\006device\030\001 \001(\0132!.opi_api.stora"
-  "ge.v1.AioController\"F\n\021AioControllerList"
-  "\0221\n\006device\030\001 \003(\0132!.opi_api.storage.v1.Ai"
-  "oController\"G\n\027AioControllerGetRequest\022,"
-  "\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Objec"
-  "tKey\"\035\n\033AioControllerGetListRequest\"L\n\034A"
-  "ioControllerGetStatsRequest\022,\n\006handle\030\001 "
-  "\001(\0132\034.opi_api.common.v1.ObjectKey\"I\n\031Aio"
-  "ControllerStatsRequest\022,\n\006handle\030\001 \001(\0132\034"
-  ".opi_api.common.v1.ObjectKey\"Q\n\022AioContr"
-  "ollerStats\022,\n\006handle\030\001 \001(\0132\034.opi_api.com"
-  "mon.v1.ObjectKey\022\r\n\005stats\030\002 \001(\t2\234\005\n\024AioC"
-  "ontrollerService\022j\n\023AioControllerCreate\022"
-  "..opi_api.storage.v1.AioControllerCreate"
-  "Request\032!.opi_api.storage.v1.AioControll"
-  "er\"\000\022_\n\023AioControllerDelete\022..opi_api.st"
-  "orage.v1.AioControllerDeleteRequest\032\026.go"
-  "ogle.protobuf.Empty\"\000\022d\n\020AioControllerGe"
-  "t\022+.opi_api.storage.v1.AioControllerGetR"
-  "equest\032!.opi_api.storage.v1.AioControlle"
-  "r\"\000\022p\n\024AioControllerGetList\022/.opi_api.st"
-  "orage.v1.AioControllerGetListRequest\032%.o"
-  "pi_api.storage.v1.AioControllerList\"\000\022s\n"
-  "\025AioControllerGetStats\0220.opi_api.storage"
-  ".v1.AioControllerGetStatsRequest\032&.opi_a"
-  "pi.storage.v1.AioControllerStats\"\000\022j\n\023Ai"
-  "oControllerUpdate\022..opi_api.storage.v1.A"
-  "ioControllerUpdateRequest\032!.opi_api.stor"
-  "age.v1.AioController\"\000B^\n\022opi_api.storag"
-  "e.v1B\017BackendAioProtoP\001Z5github.com/opip"
-  "roject/opi-api/storage/v1alpha1/gen/gob\006"
-  "proto3"
+  "ey\022\014\n\004name\030\002 \001(\t\022\022\n\nblock_size\030\003 \001(\003\022\024\n\014"
+  "blocks_count\030\004 \001(\003\022%\n\004uuid\030\005 \001(\0132\027.opi_a"
+  "pi.common.v1.Uuid\022\020\n\010filename\030\006 \001(\t\"O\n\032A"
+  "ioControllerCreateRequest\0221\n\006device\030\001 \001("
+  "\0132!.opi_api.storage.v1.AioController\"J\n\032"
+  "AioControllerDeleteRequest\022,\n\006handle\030\001 \001"
+  "(\0132\034.opi_api.common.v1.ObjectKey\"O\n\032AioC"
+  "ontrollerUpdateRequest\0221\n\006device\030\001 \001(\0132!"
+  ".opi_api.storage.v1.AioController\"F\n\021Aio"
+  "ControllerList\0221\n\006device\030\001 \003(\0132!.opi_api"
+  ".storage.v1.AioController\"G\n\027AioControll"
+  "erGetRequest\022,\n\006handle\030\001 \001(\0132\034.opi_api.c"
+  "ommon.v1.ObjectKey\"\035\n\033AioControllerGetLi"
+  "stRequest\"L\n\034AioControllerGetStatsReques"
+  "t\022,\n\006handle\030\001 \001(\0132\034.opi_api.common.v1.Ob"
+  "jectKey\"I\n\031AioControllerStatsRequest\022,\n\006"
+  "handle\030\001 \001(\0132\034.opi_api.common.v1.ObjectK"
+  "ey\"Q\n\022AioControllerStats\022,\n\006handle\030\001 \001(\013"
+  "2\034.opi_api.common.v1.ObjectKey\022\r\n\005stats\030"
+  "\002 \001(\t2\234\005\n\024AioControllerService\022j\n\023AioCon"
+  "trollerCreate\022..opi_api.storage.v1.AioCo"
+  "ntrollerCreateRequest\032!.opi_api.storage."
+  "v1.AioController\"\000\022_\n\023AioControllerDelet"
+  "e\022..opi_api.storage.v1.AioControllerDele"
+  "teRequest\032\026.google.protobuf.Empty\"\000\022d\n\020A"
+  "ioControllerGet\022+.opi_api.storage.v1.Aio"
+  "ControllerGetRequest\032!.opi_api.storage.v"
+  "1.AioController\"\000\022p\n\024AioControllerGetLis"
+  "t\022/.opi_api.storage.v1.AioControllerGetL"
+  "istRequest\032%.opi_api.storage.v1.AioContr"
+  "ollerList\"\000\022s\n\025AioControllerGetStats\0220.o"
+  "pi_api.storage.v1.AioControllerGetStatsR"
+  "equest\032&.opi_api.storage.v1.AioControlle"
+  "rStats\"\000\022j\n\023AioControllerUpdate\022..opi_ap"
+  "i.storage.v1.AioControllerUpdateRequest\032"
+  "!.opi_api.storage.v1.AioController\"\000B^\n\022"
+  "opi_api.storage.v1B\017BackendAioProtoP\001Z5g"
+  "ithub.com/opiproject/opi-api/storage/v1a"
+  "lpha1/gen/gob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_backend_5faio_2eproto_deps[3] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
@@ -304,7 +306,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_backend_5faio_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_backend_5faio_2eproto = {
-  false, false, 1686, descriptor_table_protodef_backend_5faio_2eproto, "backend_aio.proto", 
+  false, false, 1700, descriptor_table_protodef_backend_5faio_2eproto, "backend_aio.proto", 
   &descriptor_table_backend_5faio_2eproto_once, descriptor_table_backend_5faio_2eproto_deps, 3, 10,
   schemas, file_default_instances, TableStruct_backend_5faio_2eproto::offsets,
   file_level_metadata_backend_5faio_2eproto, file_level_enum_descriptors_backend_5faio_2eproto, file_level_service_descriptors_backend_5faio_2eproto,
@@ -359,6 +361,14 @@ AioController::AioController(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 AioController::AioController(const AioController& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
   filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     filename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -384,6 +394,10 @@ AioController::AioController(const AioController& from)
 }
 
 inline void AioController::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   filename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -403,6 +417,7 @@ AioController::~AioController() {
 
 inline void AioController::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   filename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete handle_;
   if (this != internal_default_instance()) delete uuid_;
@@ -424,6 +439,7 @@ void AioController::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmpty();
   filename_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && handle_ != nullptr) {
     delete handle_;
@@ -453,33 +469,43 @@ const char* AioController::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         } else
           goto handle_unusual;
         continue;
-      // int64 block_size = 2;
+      // string name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.AioController.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 block_size = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           block_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int64 blocks_count = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+      // int64 blocks_count = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           blocks_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .opi_api.common.v1.Uuid uuid = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+      // .opi_api.common.v1.Uuid uuid = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_uuid(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string filename = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+      // string filename = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_filename();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "opi_api.storage.v1.AioController.filename"));
@@ -524,34 +550,44 @@ uint8_t* AioController::_InternalSerialize(
         1, _Internal::handle(this), target, stream);
   }
 
-  // int64 block_size = 2;
+  // string name = 2;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "opi_api.storage.v1.AioController.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // int64 block_size = 3;
   if (this->_internal_block_size() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_block_size(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_block_size(), target);
   }
 
-  // int64 blocks_count = 3;
+  // int64 blocks_count = 4;
   if (this->_internal_blocks_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_blocks_count(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_blocks_count(), target);
   }
 
-  // .opi_api.common.v1.Uuid uuid = 4;
+  // .opi_api.common.v1.Uuid uuid = 5;
   if (this->_internal_has_uuid()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::uuid(this), target, stream);
+        5, _Internal::uuid(this), target, stream);
   }
 
-  // string filename = 5;
+  // string filename = 6;
   if (!this->_internal_filename().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_filename().data(), static_cast<int>(this->_internal_filename().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "opi_api.storage.v1.AioController.filename");
     target = stream->WriteStringMaybeAliased(
-        5, this->_internal_filename(), target);
+        6, this->_internal_filename(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -570,7 +606,14 @@ size_t AioController::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string filename = 5;
+  // string name = 2;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string filename = 6;
   if (!this->_internal_filename().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -584,19 +627,19 @@ size_t AioController::ByteSizeLong() const {
         *handle_);
   }
 
-  // .opi_api.common.v1.Uuid uuid = 4;
+  // .opi_api.common.v1.Uuid uuid = 5;
   if (this->_internal_has_uuid()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *uuid_);
   }
 
-  // int64 block_size = 2;
+  // int64 block_size = 3;
   if (this->_internal_block_size() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_block_size());
   }
 
-  // int64 blocks_count = 3;
+  // int64 blocks_count = 4;
   if (this->_internal_blocks_count() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_blocks_count());
   }
@@ -623,6 +666,9 @@ void AioController::MergeFrom(const AioController& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
   if (!from._internal_filename().empty()) {
     _internal_set_filename(from._internal_filename());
   }
@@ -657,6 +703,11 @@ void AioController::InternalSwap(AioController* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &filename_, lhs_arena,

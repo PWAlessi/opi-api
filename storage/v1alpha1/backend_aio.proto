@@ -29,10 +29,11 @@ message AioController {
     // handle will be returned with created object
     common.v1.ObjectKey handle = 1;
 
-    int64 block_size = 2;
-    int64 blocks_count = 3;
-    common.v1.Uuid uuid = 4;
-    string filename = 5;
+    string name = 2;
+    int64 block_size = 3;
+    int64 blocks_count = 4;
+    common.v1.Uuid uuid = 5;
+    string filename = 6;
 }
 
 message AioControllerCreateRequest {
